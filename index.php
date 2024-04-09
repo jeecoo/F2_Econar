@@ -18,8 +18,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
 
     <title>POPCORNCINEMA</title>
-
     <script src="script.js"></script> 
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  
   </head>
 
   
@@ -40,52 +42,71 @@
         </ul>
 
         <div class="all-btn">
-          <div class="btn1" id="btnRegister"><a href="register.php">Register</a></div>
-          <div class="btn2" id="btnLogin"><a href="login.php">Login</a></div>
-          <div class="btn3" id="btnAdmin"><a href="admin.php">Admin</a></div>
-        </div> 
+          <!-- <div class="reg_btn" id="reg_btn">Register</div> -->
+          <div class="login_btn" id="login_btn" href="login.html">Log In</div>  
+          <div class="admin_btn" id="admin_btn">Admin</div>
+        </div>  
       </header>
+
+      <div class="wrapper">
+        <span class="icon-close">
+          <ion-icon name="close" style="font-size: 20px;"></ion-icon>
+        </span>
+        <div class="form-box login">
+          <h2>Log In</h2>
+          <form method="post" action="#register.php">
+            <div class="input-box">
+              <span class="icon"><ion-icon name="mail"></ion-icon></span>
+              <input type="email" required>
+              <label>Email</label>
+            </div>
+            <div class="input-box">
+              <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+              <input type="password" required>  
+              <label>Password</label>
+            </div>
+            <button type="submit" name="" class="loginbtn">Log In</button>
+            <div class="login-register">
+              <p>Don't have an account?
+                <a href="#" class="register-link">Register</a>
+              </p>
+            </div>
+          </form>
+        </div>
+
+        <div class="form-box register">
+          <h2>Register</h2>
+          <form method="post" action="#register.php">
+            <div class="input-box">
+              <span class="icon"><ion-icon name="person"></ion-icon></span>
+              <input type="text" required>
+              <label for="txtusername">Username</label>
+            </div>
+            <div class="input-box">
+              <span class="icon"><ion-icon name="mail"></ion-icon></span>
+              <input type="email" required>
+              <label for="txtemail">Email</label>
+            </div>
+            <div class="input-box">
+              <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+              <input type="password" required>
+              <label for="txtpassword">Password</label>
+            </div>
+            <button type="submit" name="btnRegister" class="loginbtn">Register</button>
+            <div class="login-register">
+              <p>Already have an account?
+                <a href="#" class="login-link">Login</a>
+              </p>
+            </div>
+          </form>
+        </div>
+      </div>
     
-      
       <!-- HERO -->
-    <div class="landing_page">
-    <h1>POPCORN CINEMA</h1>
+    <!-- <div class="landing_page">
       <div class="header">
       </div>
-    </div>
-
-    <footer>
-      <!-- <div class="cit_logo_footer"> -->
-        <img id="popcorn" src="images/popcorn cinema logo.png" alt="logo">
-      <!-- </div> -->
-
-      <div class="box1" id="contacts">
-
-        <p>Econar, John Mark A.</p>
-        <p>Paragoso, Yllana Mikhaila</p>
-      </div>
-
-
-      <div class="box2">
-        <h1>Get in Touch</h1>
-        <!-- <div class="icons">
-          <a href="https://www.facebook.com/apollo.raval" target="_blank"><img src="images/fb.png" ></a>
-          <a href="http://www.instagram.com" target="_blank"><img src="images/ig.png"></a>
-          <a href="linkedin.com" target="_blank"><img src="images/linkedin.png"></a>
-          <a href="http://"><img src="images/twitter.png"></a>
-        </div> -->
-        
-        
-        <!-- <div class="search">
-          <input type="text" placeholder="Search">
-
-          <div id="search_background">
-            <img src="images/search.png" alt="">
-          </div>
-        </div> -->
-        
-      </div>
-    </footer>
+    </div> -->
   </body>
 </html
 
