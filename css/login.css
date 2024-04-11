@@ -1,0 +1,203 @@
+:root { 
+    --main-color:  #FEBE10 ;
+    --secondary-color: #cc0000;
+    --text-color: white ;
+    --background-color: #020307;
+}
+
+*{
+    font-family: "Poppins", sans-serif;
+    padding: 0;
+    margin: 0;  
+    font-size: 13px;
+    box-sizing: border-box;
+    font-weight: 500;  
+    font-style: normal;
+    scroll-padding-top: 2rem;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    max-width: 100%;
+    overflow-x: hidden;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+}
+
+/* LOGIN */
+
+.wrapper{
+    width: 400px;
+    height: 440px;
+    background: transparent;
+    border: 2px solid var(--main-color);
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 30px rgba(0,0,0, .5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    overflow: hidden;
+    transform: scale(1);
+    transition: transform .5s ease, height .2s ease;
+    z-index: 100;
+}
+
+.wrapper.active-popup{
+    transform: scale(2);
+}
+
+.wrapper.active{
+    height: 620px;
+}
+
+
+.wrapper .form-box{
+    width: 100%;
+    padding: 40px;
+}
+
+.wrapper .form-box.login{
+    transition: transform .18s ease;
+    transform: translateX(0);
+}
+
+.wrapper.active .form-box.login{
+    transition: none;
+    transform: translate(-400px);
+}
+.wrapper .form-box.register{
+position: absolute;
+transition: none;
+transform: translateX(400px)
+}
+
+.wrapper.active .form-box.register{
+    transition: transform .18s ease;
+    transform: translateX(0);
+}
+
+
+
+.wrapper .icon-close{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45px;
+    height: 45px;
+    background: var(--secondary-color);
+    font-size: 20px;
+    color: var(--text-color);
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius: 20px;
+    cursor: pointer;
+    z-index: 2;
+    transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in;
+}
+
+.wrapper .icon-close:hover{
+    background: var(--main-color);
+}
+
+.form-box h2{
+    font-size: 2em;
+    font-weight: bold   ;
+    color: var(--main-color);
+    text-align: center;
+
+}
+
+.input-box{
+    position: relative;
+    width: 100%;
+    height: 50px;
+    border-bottom: 2px solid var(--main-color);
+    margin: 30px 0;
+
+}
+
+.input-box label{
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 1em;
+    color: var(--main-color);
+    font-weight: 500;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.input-box input:focus ~ label,
+.input-box input:not(:placeholder-shown) ~ label,
+.input-box input:valid ~ label,
+.input-box label.active {
+    top: -5px;
+}
+.input-box input{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    color: var(--text-color);
+    font-weight: 600;
+    padding: 0 35px 0 5px;
+}
+
+.input-box .icon{
+    position: absolute;
+    right: 8px;
+    font-size: 1.2em;
+    color: var(--main-color);
+    line-height: 57px;
+
+}
+
+.loginbtn{
+    width: 100%;
+    height: 45px;
+    background-color: var(--secondary-color);
+    border: none;
+    outline: none;
+    border-radius: 0.6rem;
+    cursor: pointer;
+    font-size: 1em;
+    color: var(--text-color);
+    font-weight: 500;
+    transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in;
+}
+
+.loginbtn:hover{
+    background-color: var(--main-color);
+}
+
+.login-register{
+    font-size: .9em;
+    color: var(--text-color);
+    text-align: center;
+    font-weight: 500;
+    margin: 25px 0 10px;
+
+}
+
+.login-register p a{
+    color: var(--main-color);
+    text-decoration: none;
+    text-align: none;
+    font-weight: 600;
+
+}
+
+.login-register p a:hover{
+    text-decoration: underline;
+}

@@ -1,10 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const wrapper = document.querySelector('.wrapper');
+    const wrapper = document.querySelector('#login-popup');
     const loginLink = document.querySelector('.login-link');
     const registerLink = document.querySelector('.register-link');
     const btnPopup = document.querySelector('.login_btn');
     const iconClose = document.querySelector('.icon-close');
-    const loginForm = document.querySelector('.form-box.login form');
 
 
     registerLink.addEventListener('click', () => {
@@ -24,6 +23,4 @@ document.addEventListener('DOMContentLoaded', () => {
         wrapper.classList.remove('active-popup');
         wrapper.classList.remove('active');
     });
-
-    const loginBtn = document.getElementById("login_btn");
 });

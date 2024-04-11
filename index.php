@@ -1,8 +1,7 @@
 <?php
-      include 'connect.php';
-      //include 
+    include 'connect.php';
+    require_once 'header.php';
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -21,93 +20,27 @@
     <script src="script.js"></script> 
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-  
   </head>
 
-  
+
   <body>
-    <!-- NAVBAR -->
-      <header>
-        <a href="index.html" class="logo" id="logo">
-          <img src="images/popcorn cinema logo.png" alt="popcorn_cinema_logo">
-        </a>
-
-      <!-- menu -->
-        <ul class="menu">
-          <li><a href="home.html" class="home-active">Home</a></li>
-          <li><a href="#movie-schedules">Movie Schedules</a></li>
-          <li><a href="#coming-soon">Coming Soon</a></li>
-          <li><a href="about_us.html">About Us</a></li>
-          <li><a href="#contacts">Contact Us</a></li>
-        </ul>
-
-        <div class="all-btn">
-          <!-- <div class="reg_btn" id="reg_btn">Register</div> -->
-          <div class="login_btn" id="login_btn" href="login.html">Log In</div>  
-          <div class="admin_btn" id="admin_btn">Admin</div>
-        </div>  
-      </header>
-
-      <div class="wrapper">
-        <span class="icon-close">
-          <ion-icon name="close" style="font-size: 20px;"></ion-icon>
-        </span>
-        <div class="form-box login">
-          <h2>Log In</h2>
-          <form method="post" action="#register.php">
-            <div class="input-box">
-              <span class="icon"><ion-icon name="mail"></ion-icon></span>
-              <input type="email" required>
-              <label>Email</label>
-            </div>
-            <div class="input-box">
-              <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
-              <input type="password" required>  
-              <label>Password</label>
-            </div>
-            <button type="submit" name="" class="loginbtn">Log In</button>
-            <div class="login-register">
-              <p>Don't have an account?
-                <a href="#" class="register-link">Register</a>
-              </p>
-            </div>
-          </form>
+    <div class="landing_page">
+        <div class="header">
+          <h1>BOOK A TICKET NOW!!!</h1>
         </div>
-
-        <div class="form-box register">
-          <h2>Register</h2>
-          <form method="post" action="#register.php">
-            <div class="input-box">
-              <span class="icon"><ion-icon name="person"></ion-icon></span>
-              <input type="text" required>
-              <label for="txtusername">Username</label>
-            </div>
-            <div class="input-box">
-              <span class="icon"><ion-icon name="mail"></ion-icon></span>
-              <input type="email" required>
-              <label for="txtemail">Email</label>
-            </div>
-            <div class="input-box">
-              <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
-              <input type="password" required>
-              <label for="txtpassword">Password</label>
-            </div>
-            <button type="submit" name="btnRegister" class="loginbtn">Register</button>
-            <div class="login-register">
-              <p>Already have an account?
-                <a href="#" class="login-link">Login</a>
-              </p>
-            </div>
-          </form>
-        </div>
+        <!-- <h1>CIT LOVES <br><span> AGAIN!</span></h1> -->
+        <!-- <div class="header_details">
+          <p>Feeling Lonely? Spark a connection with someone special
+            here in CIT-U!!
+          </p>
+        </div> -->
       </div>
-    
-      <!-- HERO -->
-    <!-- <div class="landing_page">
-      <div class="header">
-      </div>
-    </div> -->
   </body>
 </html
+
+
+<?php
+    require_once 'footer.php';
+?>
 
 

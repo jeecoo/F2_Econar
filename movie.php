@@ -18,7 +18,7 @@
                     <th>ID</th>
                     <th>Title</th>
                     <th>Genre</th>
-                    <th>Duration</th>
+                    <th>Duration</th>   
                     <th>Release Date</th>
                     <th>Action</th>
                 </tr>
@@ -52,8 +52,8 @@
                         <td>{$row['duration']}</td>
                         <td>{$row['releasedate']}</td>
                         <td>
-                            <a class='btn btn-primary btn-sm' href='/F2_Paragoso/edit.php?id={$row['movieid']}'>Edit</a>
-                            <a class='btn btn-danger btn-sm' href='/F2_Paragoso/delete.php?id={$row['movieid']}'>Delete</a>
+                            <a class='btn btn-primary btn-sm' href='/F2_Econar/edit.php?id={$row['movieid']}'>Edit</a>
+                            <a class='btn btn-danger btn-sm' href='/F2_Econar/delete.php?id={$row['movieid']}'>Delete</a>
                         </td>
                         </tr>
                         ";
