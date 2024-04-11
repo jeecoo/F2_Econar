@@ -172,7 +172,6 @@ header .menu{
     margin: auto;
     text-align: center;
 }
-
 #popcorn {
     width: 300px;
 }
@@ -234,9 +233,7 @@ footer {
     bottom: 0;
     left: 0;
     width: 100%;
-    background-color: grey; /* Adjust as needed */
-
-    
+    background-color: grey; /* Adjust as needed */ 
 }
 
 .landing_page{
@@ -252,6 +249,9 @@ footer {
     background-position: center;
 }
 
+.landing_page h1{
+    font-size: 100px;
+}
 #citlogo {
     width: 200px;
 }

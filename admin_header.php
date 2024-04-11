@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="css\styles2.css" />
+    <link rel="stylesheet" href="css\admin_dashboard.css" />
     <meta charset="UTF-8" />  
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -37,9 +37,13 @@
 
         <div class="all-btn">
           <!-- <div class="reg_btn" id="reg_btn">Register</div> -->
-          <a href="login.php"><div class="login_btn" id="login_btn">Log In</div></a>
-          <!-- <a href="movie.php"><div class="movie_btn" id="movie_btn">Dashboard</div></a> -->
-        </div>  
+          <!-- <a href="login.php"><div class="login_btn" id="login_btn">Log In</div></a> -->
+        <a href="movie.php"><div class="movie_btn" id="movie_btn">Dashboard</div></a>
+        
+        <a href="index.php"><div class="exit_btn" id="exit_btn">
+        <ion-icon name="exit" style="font-size: 20px;"></ion-icon></div>
+        </a>
+       
       </header>
 </body>
 </html>

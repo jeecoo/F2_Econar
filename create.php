@@ -1,9 +1,9 @@
-
-<?php
-    require_once 'header.php';
-?>
 <?php
     include 'connect.php';
+    require_once 'admin_header.php';
+?>
+
+<?php
 
     $title = "";
     $genre = "";
@@ -165,9 +165,10 @@
             }
 
             .btn-outline {
-                background-color: transparent;
+                text-decoration:none;
+                background-color: #dc3545;
                 border: 1px solid var(--secondary-color);
-                color: var(--secondary-color);
+                color: var(--text-color);
             }
 
             .btn-outline:hover {

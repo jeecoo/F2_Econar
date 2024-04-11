@@ -1,6 +1,6 @@
 <?php
     include 'connect.php';
-    require_once 'header.php';
+    require_once 'admin_header.php';
 ?>
 
 <!DOCTYPE html>
@@ -23,7 +23,7 @@
 </head>
 <body>
     <div class="container">
-        <a href="index.php"><span class="icon-close" onclick="redirectToIndex()">
+        <a href="admin_dashboard.php"><span class="icon-close">
         <ion-icon name="close" style="font-size: 20px;"></ion-icon>
         </span></a>
 

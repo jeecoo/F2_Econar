@@ -1,10 +1,9 @@
 <?php
-    require_once 'header.php';
+    include 'connect.php';
+    require_once 'admin_header.php';
 ?>
 
 <?php
-    // Include the database connection file
-    include 'connect.php';
 
     // Check if movie ID is provided in the URL
     if(isset($_GET['id'])) {
@@ -44,12 +43,11 @@
     <!-- Your CSS styles here -->
     <style>
         :root { 
-        --main-color:  #FEBE10;
-        --secondary-color: #cc0000;
-        --text-color: white;
-        --background-color: #020307;
+            --main-color:  #FEBE10 ;
+            --secondary-color: #cc0000;
+            --text-color: white ;
+            --background-color: #020307;
         }
-
         *{
             font-family: "Poppins", sans-serif;
             padding: 0;
@@ -64,13 +62,15 @@
 
         
         body {
-            color: black;
+            background-color: var(--background-color);
+            color: var(--text-color);
             max-width: 100%;
-            min-height: 100vh;
+            overflow-x: hidden;
+            display: flex;
             justify-content: center;
+            min-height: 100vh;
             background-size: cover;
             background-position: center;
-            background-color: var(--background-color);
         }
 
         .container {
@@ -85,7 +85,7 @@
         }
 
 
-        h2 {
+        .container h2 {
             font-weight: bold;
             text-transform: uppercase;
             color: black;
@@ -93,7 +93,7 @@
             margin-bottom: 20px;
         }
 
-        p {
+       .container p {
             color: black;
             font-size: 16px;
             margin-bottom: 10px;
@@ -122,40 +122,15 @@
         }
 
         .btn-outline {
-            margin-top: 1000000px;
-            background-color: transparent;
-            border: 1px solid var(--secondary-color);
-            color: var(--secondary-color);
-        }
+                text-decoration:none;
+                background-color: #dc3545;
+                border: 1px solid var(--secondary-color);
+                color: var(--text-color);
+            }
 
         .btn-outline:hover {
             background-color: #c82333;
             color: #fff;
-        }
-
-        .alert {
-            padding: 15px;
-            margin-bottom: 20px;
-            border: 1px solid transparent;
-            border-radius: 5px;
-        }
-
-        .alert-warning {
-            background-color: #ffc107;
-            border-color: #ffc107;
-            color: #333;
-        }
-
-        .alert-dismissible {
-            position: relative;
-            padding-right: 35px;
-        }
-
-        .btn-close {
-            position: absolute;
-            top: 50%;
-            right: 10px;
-            transform: translateY(-50%);
         }
 
     </style>
@@ -173,6 +148,8 @@
     </div>
 </body>
 </html>
+
+
 <?php
     require_once 'footer.php';
 ?>

@@ -1,52 +1,51 @@
 <?php
-    require_once 'header.php';
+    include 'connect.php';
+    require_once 'admin_header.php';
 ?>
 
 <?php
-include 'connect.php';
-
 // Check if movie ID is provided in the URL
-if(isset($_GET['id'])) {
-    $movie_id = $_GET['id'];
-    
-    // Retrieve movie details from the database based on the provided movie ID
-    $sql = "SELECT * FROM tblmovie WHERE movieid = $movie_id";
-    $result = $connection->query($sql);
-    
-    // Check if the movie exists
-    if($result->num_rows > 0) {
-        $row = $result->fetch_assoc();
-        $title = $row['title'];
-        $genre = $row['genre'];
-        $duration = $row['duration'];
-        $releasedate = $row['releasedate'];
+    if(isset($_GET['id'])) {
+        $movie_id = $_GET['id'];
+        
+        // Retrieve movie details from the database based on the provided movie ID
+        $sql = "SELECT * FROM tblmovie WHERE movieid = $movie_id";
+        $result = $connection->query($sql);
+        
+        // Check if the movie exists
+        if($result->num_rows > 0) {
+            $row = $result->fetch_assoc();
+            $title = $row['title'];
+            $genre = $row['genre'];
+            $duration = $row['duration'];
+            $releasedate = $row['releasedate'];
+        } else {
+            // Redirect back to the movie list if the movie does not exist
+            header("Location: movie.php");
+            exit();
+        }
     } else {
-        // Redirect back to the movie list if the movie does not exist
+        // Redirect back to the movie list if movie ID is not provided
         header("Location: movie.php");
         exit();
     }
-} else {
-    // Redirect back to the movie list if movie ID is not provided
-    header("Location: movie.php");
-    exit();
-}
 
-// Process form submission to update movie details
-if($_SERVER['REQUEST_METHOD'] == 'POST'){
-    // Retrieve updated movie details from the form
-    $title = $_POST["title"];
-    $genre = $_POST["genre"];
-    $duration = $_POST["duration"];
-    $releasedate = $_POST["releasedate"];
+    // Process form submission to update movie details
+    if($_SERVER['REQUEST_METHOD'] == 'POST'){
+        // Retrieve updated movie details from the form
+        $title = $_POST["title"];
+        $genre = $_POST["genre"];
+        $duration = $_POST["duration"];
+        $releasedate = $_POST["releasedate"];
 
-    // Update the movie details in the database
-    $sql = "UPDATE tblmovie SET title = '$title', genre = '$genre', duration = '$duration', releasedate = '$releasedate' WHERE movieid = $movie_id";
-    $result = $connection->query($sql);
+        // Update the movie details in the database
+        $sql = "UPDATE tblmovie SET title = '$title', genre = '$genre', duration = '$duration', releasedate = '$releasedate' WHERE movieid = $movie_id";
+        $result = $connection->query($sql);
 
-    // Redirect back to the movie list after updating the movie details
-    header("Location: movie.php");
-    exit();
-}
+        // Redirect back to the movie list after updating the movie details
+        header("Location: movie.php");
+        exit();
+    }
 ?>
 
 <!DOCTYPE html>
@@ -173,10 +172,11 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         }
 
         .btn-outline {
-            background-color: transparent;
-            border: 1px solid var(--secondary-color);
-            color: var(--secondary-color);
-        }
+                text-decoration:none;
+                background-color: #dc3545;
+                border: 1px solid var(--secondary-color);
+                color: var(--text-color);
+            }
 
         .btn-outline:hover {
             background-color: #c82333;

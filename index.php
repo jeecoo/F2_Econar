@@ -26,7 +26,7 @@
   <body>
     <div class="landing_page">
         <div class="header">
-          <h1>BOOK A TICKET NOW!!!</h1>
+          <h1 style="font-size: 100px;">BOOK A TICKET NOW!!!</h1>
         </div>
         <!-- <h1>CIT LOVES <br><span> AGAIN!</span></h1> -->
         <!-- <div class="header_details">
