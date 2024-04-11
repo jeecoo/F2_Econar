@@ -102,7 +102,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
             margin: 130px auto;
             padding: 20px;
             background-color: #fff;
-            border-radius: 8px;
+            border: 5px solid var(--main-color);
+            border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             z-index: 1000000;
         }
