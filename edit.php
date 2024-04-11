@@ -1,4 +1,8 @@
 <?php
+    require_once 'header.php';
+?>
+
+<?php
 include 'connect.php';
 
 // Check if movie ID is provided in the URL
@@ -44,7 +48,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     exit();
 }
 ?>
-!DOCTYPE html>
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8" />  
@@ -61,8 +66,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <title>Add Movies</title>
     <style>
-
-         :root { 
+        :root { 
         --main-color:  #FEBE10;
         --secondary-color: #cc0000;
         --text-color: white;
@@ -90,18 +94,21 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
             background-size: cover;
             background-position: center;
             background-color: var(--background-color);
+    
         }
 
         .container {
-            max-width: 500px;
-            margin: 50px auto;
+            width: 500px;
+            margin: 130px auto;
             padding: 20px;
             background-color: #fff;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000000;
         }
 
         h2 {
+            color: black;
             margin-bottom: 20px;
             padding-top: 20px;
             font-size: 20px;
@@ -114,6 +121,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         }
 
         label {
+            color: black;
             display: block;
             margin-bottom: 5px;
         }
@@ -259,3 +267,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     </div>
 </body>
 </html>
+
+<?php
+    require_once 'footer.php';
+?>
+
