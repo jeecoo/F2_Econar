@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 05, 2024 at 04:24 AM
--- Server version: 10.4.27-MariaDB
--- PHP Version: 8.1.12
+-- Generation Time: Apr 12, 2024 at 05:43 AM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -40,12 +40,10 @@ CREATE TABLE `tblmovie` (
 --
 
 INSERT INTO `tblmovie` (`movieid`, `title`, `genre`, `duration`, `releasedate`) VALUES
-(1, 'Dune: Part Two', 'Science Fiction', '02:00:00.000000', '2024-10-20'),
-(2, 'The Batman', 'Action, Crime, Drama', '02:55:00.000000', '2022-03-04'),
-(3, 'Avatar: The Way of Water', 'Action, Adventure, Fantasy', '02:30:00.000000', '2024-12-16'),
-(4, 'Jurassic World: Dominion', 'Action, Adventure, Sci-Fi', '02:10:00.000000', '2022-06-10'),
-(5, 'Black Panther: Wakanda Forever', 'Action, Adventure, Drama', '02:25:00.000000', '2022-11-11'),
-(6, 'dada', 'dada', '838:59:59.999999', '0000-00-00');
+(23, 'The Hon', 'Romance', '01:55:00.000000', '2024-05-06'),
+(24, 'Isda', 'Drama', '00:45:00.000000', '2024-04-29'),
+(25, 'Hakdog2', 'Drama', '01:30:00.000000', '2024-04-30'),
+(26, 'Si Istong', 'Horror', '02:45:00.000000', '2024-04-18');
 
 -- --------------------------------------------------------
 
@@ -56,8 +54,8 @@ INSERT INTO `tblmovie` (`movieid`, `title`, `genre`, `duration`, `releasedate`) 
 CREATE TABLE `tbluseraccount` (
   `accid` int(10) NOT NULL,
   `emailadd` varchar(50) NOT NULL,
-  `username` varchar(20) NOT NULL,
   `password` varchar(20) NOT NULL,
+  `mobilenumber` varchar(11) NOT NULL,
   `usertype` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -65,8 +63,9 @@ CREATE TABLE `tbluseraccount` (
 -- Dumping data for table `tbluseraccount`
 --
 
-INSERT INTO `tbluseraccount` (`accid`, `emailadd`, `username`, `password`, `usertype`) VALUES
-(8, 'leahbarbaso@gmail.com', 'leah', 'barabso', '');
+INSERT INTO `tbluseraccount` (`accid`, `emailadd`, `password`, `mobilenumber`, `usertype`) VALUES
+(1, 'popcorncinema_admin@gmail.com', 'admin', '0987654321', ''),
+(2, 'johnmark.econar7@gmail.com', '12345', '0987654321', '');
 
 -- --------------------------------------------------------
 
@@ -75,7 +74,7 @@ INSERT INTO `tbluseraccount` (`accid`, `emailadd`, `username`, `password`, `user
 --
 
 CREATE TABLE `tbluserprofile` (
-  `StudentID` int(10) NOT NULL,
+  `userid` int(10) NOT NULL,
   `firstname` varchar(20) NOT NULL,
   `lastname` varchar(20) NOT NULL,
   `gender` varchar(15) NOT NULL
@@ -85,8 +84,9 @@ CREATE TABLE `tbluserprofile` (
 -- Dumping data for table `tbluserprofile`
 --
 
-INSERT INTO `tbluserprofile` (`StudentID`, `firstname`, `lastname`, `gender`) VALUES
-(11, 'Leah', 'Barbaso', 'Female');
+INSERT INTO `tbluserprofile` (`userid`, `firstname`, `lastname`, `gender`) VALUES
+(1, 'Admin', 'Ko', ''),
+(2, 'John Mark', 'Econar', '');
 
 --
 -- Indexes for dumped tables
@@ -108,7 +108,7 @@ ALTER TABLE `tbluseraccount`
 -- Indexes for table `tbluserprofile`
 --
 ALTER TABLE `tbluserprofile`
-  ADD PRIMARY KEY (`StudentID`);
+  ADD PRIMARY KEY (`userid`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -118,19 +118,19 @@ ALTER TABLE `tbluserprofile`
 -- AUTO_INCREMENT for table `tblmovie`
 --
 ALTER TABLE `tblmovie`
-  MODIFY `movieid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `movieid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT for table `tbluseraccount`
 --
 ALTER TABLE `tbluseraccount`
-  MODIFY `accid` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `accid` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `tbluserprofile`
 --
 ALTER TABLE `tbluserprofile`
-  MODIFY `StudentID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `userid` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
