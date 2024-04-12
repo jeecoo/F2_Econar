@@ -20,13 +20,13 @@
     <script src="script.js"></script> 
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-  </head>
+  </head> 
 
 
   <body>
     <div class="landing_page">
         <div class="header">
-          <h1 style="font-size: 100px;">BOOK A TICKET NOW!!!</h1>
+          <h1 style="font-size: 80px;">BOOK A TICKET NOW!!!</h1>
         </div>
         <!-- <h1>CIT LOVES <br><span> AGAIN!</span></h1> -->
         <!-- <div class="header_details">

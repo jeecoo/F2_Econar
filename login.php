@@ -120,7 +120,7 @@
 					</div>
 					<div class="input-box">
 					<span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
-					<input type="password" name ="txt"  required>  
+					<input type="password" name ="txtpassword"  required>  
 					<label for="txtpassword">Password</label>
 					</div>	
 					<button type="submit" name="btnLogin" class="loginbtn">Log In</button>
