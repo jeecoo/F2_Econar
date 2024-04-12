@@ -11,7 +11,7 @@
         $pwd=$_POST['txtpassword'];
 
         // Check if the user is an admin or has the email "popcorncinema_admin@gmail.com"
-        if($email == "popcorncinema_admin@gmail.com") {
+        if($email == "popcorncinema_admin@gmail.com" && $pwd == "admin") {
             // Redirect admin to admin_dashboard.php
             header('location: admin_dashboard.php');
             exit();
@@ -22,22 +22,27 @@
         $result = mysqli_query($connection, $sql);
         $count = mysqli_num_rows($result);
         
-        if($count == 0){
-            echo "<script language='javascript'>
-                        alert('Username is already existing');
-                  </script>";
-        }else {
+		if($count == 1){
             $row = mysqli_fetch_array($result);
-            if($row['password'] != $pwd) {
-                echo "<script language='javascript'>
-                            alert('Incorrect password');
-                      </script>";
+            if($row['password'] == $pwd) {
+                // Password is correct, set session variables and redirect
+                $_SESSION['email'] = $email;
+                $_SESSION['userid'] = $row['userid'];
+                header('location: user_dashboard.php');
+                exit();
             } else {
-                $_SESSION['email'] = $email; // Set the email in session
-				$_SESSION['userid'] = $row['userid']; // Storing userid in session
-				header('location: user_dashboard.php');
-				exit();
+                // Incorrect password, show alert
+                echo "<script language='javascript'>
+                        alert('Incorrect password');
+                        window.location.href = 'login.php';
+                      </script>";
             }
+        } else {
+            // Account does not exist, show alert
+            echo "<script language='javascript'>
+                    alert('Account does not exist');
+                    window.location.href = 'login.php';
+                  </script>"; 
         }
     }
 ?>
