@@ -32,6 +32,7 @@ body {
 /* HEADER */
 
 header{
+    /* background-color: var(--background-color); */
     position: fixed;
     width: 100%;
     top: 0;
@@ -179,6 +180,7 @@ header .menu{
 
 footer {
     background-color: #28282B;
+    /* background-color: var(--background-color); */
     backdrop-filter: blur(5px);
     height: fit-content;
     bottom: 100%;
@@ -252,4 +254,14 @@ footer {
 .box1 ul li {
     padding-left: 20px;
     list-style:inside;
+}
+
+
+
+/* HERO */
+
+.hero {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
 }
